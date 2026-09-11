@@ -53,4 +53,51 @@ class ProfileRepository(
                 }
             }
     }
+    fun getCurrentUserRole(
+        onResult: (Result<String>) -> Unit
+    ) {
+
+        val currentUser = auth.currentUser
+
+        if (currentUser == null) {
+            onResult(
+                Result.failure(
+                    Exception("User is not logged in")
+                )
+            )
+            return
+        }
+
+        firestore
+            .collection("users")
+            .document(currentUser.uid)
+            .get()
+            .addOnCompleteListener { task ->
+
+                if (task.isSuccessful) {
+
+                    val role =
+                        task.result?.getString("role")
+
+                    if (role != null) {
+                        onResult(Result.success(role))
+                    } else {
+                        onResult(
+                            Result.failure(
+                                Exception("User role not found")
+                            )
+                        )
+                    }
+
+                } else {
+
+                    onResult(
+                        Result.failure(
+                            task.exception
+                                ?: Exception("Failed to load user role")
+                        )
+                    )
+                }
+            }
+    }
 }
