@@ -11,6 +11,7 @@ import com.example.societyconnect.presentation.home.HomeScreen
 import com.example.societyconnect.presentation.home.FeatureScreen
 import com.example.societyconnect.presentation.announcements.AnnouncementScreen
 import com.example.societyconnect.presentation.events.EventScreen
+import com.example.societyconnect.presentation.complaints.ComplaintScreen
 
 object Routes {
     const val LOGIN = "login"
@@ -110,8 +111,7 @@ fun AppNavigation() {
 
         // COMPLAINTS
         composable(Routes.COMPLAINTS) {
-            FeatureScreen(
-                title = "Complaints",
+            ComplaintScreen(
                 onBack = {
                     navController.popBackStack()
                 }
