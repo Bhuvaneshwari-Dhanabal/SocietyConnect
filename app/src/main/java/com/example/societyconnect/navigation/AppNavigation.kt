@@ -12,7 +12,7 @@ import androidx.navigation.compose.rememberNavController
 
 import com.example.societyconnect.data.repository.AuthRepository
 import com.example.societyconnect.data.repository.ProfileRepository
-
+import com.example.societyconnect.presentation.admin.AdminPaymentScreen
 import com.example.societyconnect.presentation.admin.AdminAnnouncementScreen
 import com.example.societyconnect.presentation.admin.AdminComplaintScreen
 import com.example.societyconnect.presentation.admin.AdminHomeScreen
@@ -24,6 +24,9 @@ import com.example.societyconnect.presentation.events.EventScreen
 import com.example.societyconnect.presentation.home.FeatureScreen
 import com.example.societyconnect.presentation.home.HomeScreen
 import com.example.societyconnect.presentation.profile.ProfileScreen
+import com.example.societyconnect.presentation.admin.AdminEventScreen
+import com.example.societyconnect.presentation.payments.PaymentScreen
+
 
 
 object Routes {
@@ -34,6 +37,8 @@ object Routes {
 
     const val LOGIN = "login"
     const val REGISTER = "register"
+
+    const val ADMIN_EVENTS = "admin_events"
 
     // --------------------------------------------------
     // RESIDENT
@@ -46,6 +51,7 @@ object Routes {
     const val PAYMENTS = "payments"
     const val VISITORS = "visitors"
     const val PROFILE = "profile"
+    const val ADMIN_PAYMENTS = "admin_payments"
 
     // --------------------------------------------------
     // ADMIN
@@ -302,9 +308,7 @@ fun AppNavigation() {
 
         composable(Routes.PAYMENTS) {
 
-            FeatureScreen(
-                title = "Payments",
-
+            PaymentScreen(
                 onBack = {
                     navController.popBackStack()
                 }
@@ -364,6 +368,14 @@ fun AppNavigation() {
                     )
                 },
 
+                onPaymentsClick = {
+
+                    navController.navigate(
+                        Routes.ADMIN_PAYMENTS
+                    )
+                },
+
+
 
                 // ------------------------------------------
                 // MANAGE EVENTS
@@ -371,14 +383,8 @@ fun AppNavigation() {
 
                 onEventsClick = {
 
-                    /*
-                     * Admin Events screen will be added next.
-                     *
-                     * For now, we keep this pointing to the
-                     * existing Events screen.
-                     */
                     navController.navigate(
-                        Routes.EVENTS
+                        Routes.ADMIN_EVENTS
                     )
                 },
 
@@ -430,5 +436,23 @@ fun AppNavigation() {
                 }
             )
         }
+
+        composable(Routes.ADMIN_EVENTS) {
+
+            AdminEventScreen(
+                onBack = {
+                    navController.popBackStack()
+                }
+            )
+        }
+        composable(Routes.ADMIN_PAYMENTS) {
+
+            AdminPaymentScreen(
+                onBack = {
+                    navController.popBackStack()
+                }
+            )
+        }
+        
     }
 }

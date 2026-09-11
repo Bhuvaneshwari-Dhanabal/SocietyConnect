@@ -18,6 +18,7 @@ fun AdminHomeScreen(
     onComplaintsClick: () -> Unit,
     onAnnouncementsClick: () -> Unit,
     onEventsClick: () -> Unit,
+    onPaymentsClick: () -> Unit,
     onLogout: () -> Unit
 ) {
 
@@ -114,6 +115,13 @@ fun AdminHomeScreen(
             modifier = Modifier.fillMaxWidth()
         ) {
             Text("Logout")
+        }
+
+        Button(
+            onClick = onPaymentsClick,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text("Manage Payments")
         }
     }
 }
