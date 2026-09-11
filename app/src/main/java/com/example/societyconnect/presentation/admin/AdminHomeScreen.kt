@@ -19,7 +19,8 @@ fun AdminHomeScreen(
     onAnnouncementsClick: () -> Unit,
     onEventsClick: () -> Unit,
     onPaymentsClick: () -> Unit,
-    onLogout: () -> Unit
+    onLogout: () -> Unit,
+    onVisitorsClick: () -> Unit
 ) {
 
     Column(
@@ -122,6 +123,12 @@ fun AdminHomeScreen(
             modifier = Modifier.fillMaxWidth()
         ) {
             Text("Manage Payments")
+        }
+        Button(
+            onClick = onVisitorsClick,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text("Manage Visitors")
         }
     }
 }

@@ -26,6 +26,7 @@ import com.example.societyconnect.presentation.home.HomeScreen
 import com.example.societyconnect.presentation.profile.ProfileScreen
 import com.example.societyconnect.presentation.admin.AdminEventScreen
 import com.example.societyconnect.presentation.payments.PaymentScreen
+import com.example.societyconnect.presentation.admin.AdminVisitorScreen
 
 
 
@@ -60,6 +61,8 @@ object Routes {
     const val ADMIN_HOME = "admin_home"
     const val ADMIN_COMPLAINTS = "admin_complaints"
     const val ADMIN_ANNOUNCEMENTS = "admin_announcements"
+
+    const val ADMIN_VISITORS = "admin_visitors"
 }
 
 
@@ -375,6 +378,13 @@ fun AppNavigation() {
                     )
                 },
 
+                onVisitorsClick = {
+
+                    navController.navigate(
+                        Routes.ADMIN_VISITORS
+                    )
+                },
+
 
 
                 // ------------------------------------------
@@ -453,6 +463,14 @@ fun AppNavigation() {
                 }
             )
         }
-        
+        composable(Routes.ADMIN_VISITORS) {
+
+            AdminVisitorScreen(
+                onBack = {
+                    navController.popBackStack()
+                }
+            )
+        }
+
     }
 }
