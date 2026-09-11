@@ -1347,36 +1347,11 @@ Admin reviews request
 
 # 27. Screenshots
 
-Create a `screenshots` folder in the repository:
 
-```text
-screenshots/
-```
-
-Recommended screenshots:
-
-```text
-screenshots/
-├── login.png
-├── register.png
-├── resident-home.png
-├── profile.png
-├── announcements.png
-├── events.png
-├── complaints.png
-├── payments.png
-├── visitors.png
-├── admin-home.png
-├── admin-complaints.png
-├── admin-announcements.png
-├── admin-events.png
-├── admin-payments.png
-└── admin-visitors.png
-```
 
 Example:
 
-```markdown
+
 ## Login Screen
 
 ![Login Screen](screenshots/login.png)
@@ -1388,7 +1363,7 @@ Example:
 ## Admin Dashboard
 
 ![Admin Dashboard](screenshots/admin-home.png)
-```
+
 
 ---
 
@@ -1396,9 +1371,10 @@ Example:
 
 Add the project demonstration video here:
 
-```text
+
 Video Demonstration:
-YOUR_GOOGLE_DRIVE_OR_VIDEO_LINK
+```text
+https://drive.google.com/file/d/1k6a6T6O0FjslNnT_wuRcD0QdL89FdMgi/view?usp=drive_link
 ```
 
 The demonstration should ideally cover:
@@ -1423,9 +1399,10 @@ The demonstration should ideally cover:
 
 # 29. GitHub Repository
 
-```text
+
 GitHub Repository:
-YOUR_GITHUB_REPOSITORY_URL
+```text
+https://github.com/Bhuvaneshwari-Dhanabal/SocietyConnect
 ```
 
 ---
@@ -1584,7 +1561,7 @@ Future versions can extend the application with online payments, push notificati
 
 # 36. Author
 
-## Achyuta K
+## Bhuvaneshwari D
 
 **Project:** SocietyConnect
 
@@ -1600,4 +1577,4 @@ Future versions can extend the application with online payments, push notificati
 
 This project was developed as a technical/academic project.
 
-Copyright © 2026 Achyuta K.
+Copyright © 2026 Bhuvaneshwai D.
